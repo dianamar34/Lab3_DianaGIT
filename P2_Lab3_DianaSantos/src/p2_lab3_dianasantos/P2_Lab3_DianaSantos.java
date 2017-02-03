@@ -401,6 +401,10 @@ public class P2_Lab3_DianaSantos {
                         empleados.remove(posicion);
                     }
                 }//fin del while de elim
+            }//FIN DE LA OPCION C DEL MENU PRINCIPAL
+            if(opcion.equals("d")){
+                //REPORTES
+               
             }
         }//fin del while del menu principal
     }//fin del main
