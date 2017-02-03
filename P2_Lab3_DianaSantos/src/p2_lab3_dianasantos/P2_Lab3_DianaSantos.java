@@ -104,26 +104,26 @@ public class P2_Lab3_DianaSantos {
 
                 }//fin del while de opcion a
                 if (opciona.equals("b")) {
-                    
+
                     Nombre = JOptionPane.showInputDialog("Nombre de la persona");
                     ID = JOptionPane.showInputDialog("ID de la persona");
                     edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
                     altura = Integer.parseInt(JOptionPane.showInputDialog("Altura"));
                     HorasTrabajo = Integer.parseInt(JOptionPane.showInputDialog("Horas de trabajo del empleado"));
                     pesoP = Integer.parseInt(JOptionPane.showInputDialog("Peso de la persona"));
-                    
+
                     empleados.add(new Empleados(HorasTrabajo, Nombre, ID, edad, altura, pesoP));
                 }
                 if (opciona.equals("b")) {
-                    
+
                     Nombre = JOptionPane.showInputDialog("Nombre de la persona");
                     ID = JOptionPane.showInputDialog("ID de la persona");
                     edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
                     altura = Integer.parseInt(JOptionPane.showInputDialog("Altura"));
                     pesoP = Integer.parseInt(JOptionPane.showInputDialog("Peso de la persona"));
                     Dinero = Integer.parseInt(JOptionPane.showInputDialog("Dinero que trae "));
-                    
-                    clientes.add(new Clientes( Dinero,  Nombre,  ID,  edad,  altura,  pesoP));
+
+                    clientes.add(new Clientes(Dinero, Nombre, ID, edad, altura, pesoP));
                 }
 
             }//fin del if de opcion a
@@ -226,7 +226,7 @@ public class P2_Lab3_DianaSantos {
                                 ((FiskerAutomotiv) carros.get(posicion)).setConvert(Convert);
                                 ((FiskerAutomotiv) carros.get(posicion)).setCorre(corre);
                             }
-                            if (cars.equals("c")) {
+                            if (cars.equals("d")) {
                                 String s = "";
                                 int posicion;
                                 for (Object t : carros) {
@@ -256,8 +256,151 @@ public class P2_Lab3_DianaSantos {
                                 ((Tramontana) carros.get(posicion)).setCorrido(corrido);
                             }
                         }
+                    }//fin del if del a modi
+                    if (mod.equals("b")) {
+                        String s = "";
+                        int posicion;
+                        for (Object t : clientes) {
+                            s += "Posicion: " + clientes.indexOf(t) + ": " + ((Clientes) (t)).getNombre() + "\n";
+                        }
+                        JOptionPane.showMessageDialog(null, s);
+                        posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del cliente a modificar:"));
+                        clientes.get(posicion);
+
+                        Nombre = JOptionPane.showInputDialog("Nombre de la persona");
+                        ID = JOptionPane.showInputDialog("ID de la persona");
+                        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                        altura = Integer.parseInt(JOptionPane.showInputDialog("Altura"));
+                        pesoP = Integer.parseInt(JOptionPane.showInputDialog("Peso de la persona"));
+                        Dinero = Integer.parseInt(JOptionPane.showInputDialog("Dinero que trae "));
+
+                        clientes.get(posicion).setComprados(carros);
+                        clientes.get(posicion).setDinero(Dinero);
+                        ((Personas) clientes.get(posicion)).setNombre(Nombre);
+                        ((Personas) clientes.get(posicion)).setAltura(altura);
+                        ((Personas) clientes.get(posicion)).setID(ID);
+                        ((Personas) clientes.get(posicion)).setEdad(edad);
+                        ((Personas) clientes.get(posicion)).setPesoP(pesoP);
                     }
-                }
+                    if (mod.equals("c")) {
+                        String s = "";
+                        int posicion;
+                        for (Object t : empleados) {
+                            s += "Posicion: " + empleados.indexOf(t) + ": " + ((Empleados) (t)).getNombre() + "\n";
+                        }
+                        JOptionPane.showMessageDialog(null, s);
+                        posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del empleado a modificar:"));
+                        empleados.get(posicion);
+
+                        Nombre = JOptionPane.showInputDialog("Nombre de la persona");
+                        ID = JOptionPane.showInputDialog("ID de la persona");
+                        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                        altura = Integer.parseInt(JOptionPane.showInputDialog("Altura"));
+                        HorasTrabajo = Integer.parseInt(JOptionPane.showInputDialog("Horas de trabajo del empleado"));
+                        pesoP = Integer.parseInt(JOptionPane.showInputDialog("Peso de la persona"));
+
+                        empleados.get(posicion).setHorasTrabajo(HorasTrabajo);
+                        ((Personas) empleados.get(posicion)).setNombre(Nombre);
+                        ((Personas) empleados.get(posicion)).setAltura(altura);
+                        ((Personas) empleados.get(posicion)).setID(ID);
+                        ((Personas) empleados.get(posicion)).setEdad(edad);
+                        ((Personas) empleados.get(posicion)).setPesoP(pesoP);
+
+                    }//fin del if c
+                }//fin del while de modificar
+            }
+            if (opcion.equals("c")) {
+                String elim = "";
+                while (!elim.equalsIgnoreCase("d")) {
+                    elim = JOptionPane.showInputDialog("   ELIMINAR\n"
+                            + "a- Carros \n"
+                            + "b- Clientes\n"
+                            + "c- Empleados\n"
+                            + "d- Salir\n");
+
+                    if (elim.equals("a")) {
+                        String cars = "";
+                        while (!cars.equalsIgnoreCase("e")) {
+                            cars = JOptionPane.showInputDialog("  Que carro desea eliminar: \n"
+                                    + "a- Maybach \n"
+                                    + "b- Morgan Aero 8\n"
+                                    + "c- Fisker Automotive\n"
+                                    + "d- Tramontana"
+                                    + "e- Salir\n");
+                            if (cars.equals("a")) {
+                                String s = "";
+                                int posicion;
+                                for (Object t : carros) {
+                                    s += "Posicion: " + carros.indexOf(t) + ": " + ((Maybash) (t)).getNSerie() + "\n";
+                                }
+
+                                JOptionPane.showMessageDialog(null, s);
+                                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
+                                carros.get(posicion);
+                                carros.remove(posicion);
+                            }
+
+                            if (cars.equals("b")) {
+                                String s = "";
+                                int posicion;
+                                for (Object t : carros) {
+                                    s += "Posicion: " + carros.indexOf(t) + ": " + ((MorganAero8) (t)).getNSerie() + "\n";
+                                }
+                                
+                                JOptionPane.showMessageDialog(null, s);
+                                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
+                                carros.get(posicion);
+                                carros.remove(posicion);
+                            }
+                            if (cars.equals("c")) {
+                                String s = "";
+                                int posicion;
+                                for (Object t : carros) {
+                                    s += "Posicion: " + carros.indexOf(t) + ": " + ((FiskerAutomotiv) (t)).getNSerie() + "\n";
+                                }
+                                
+                                JOptionPane.showMessageDialog(null, s);
+                                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
+                                carros.get(posicion);
+                                carros.remove(posicion);
+                            }
+                            if (cars.equals("d")) {
+                                String s = "";
+                                int posicion;
+                                for (Object t : carros) {
+                                    s += "Posicion: " + carros.indexOf(t) + ": " + ((Tramontana) (t)).getNSerie() + "\n";
+                                }
+                                
+                                JOptionPane.showMessageDialog(null, s);
+                                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
+                                carros.get(posicion);
+                                carros.remove(posicion);
+                            }
+                        }//findel while
+                    }//fin del if a
+                    if (elim.equals("b")) {
+                        String s = "";
+                        int posicion;
+                        for (Object t : clientes) {
+                            s += "Posicion: " + clientes.indexOf(t) + ": " + ((Clientes) (t)).getNombre() + "\n";
+                        }
+                        JOptionPane.showMessageDialog(null, s);
+                        posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del cliente a eliminar:"));
+                        clientes.get(posicion);
+                        clientes.remove(posicion);
+                    }
+                    if (elim.equals("c")) {
+                        String s = "";
+                        int posicion;
+                        for (Object t : empleados) {
+                            s += "Posicion: " + empleados.indexOf(t) + ": " + ((Empleados) (t)).getNombre() + "\n";
+                        }
+                        JOptionPane.showMessageDialog(null, s);
+                        posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del empleado a eliminar:"));
+                        empleados.get(posicion);
+                        empleados.remove(posicion);
+                    }
+                }//fin del while de elim
             }
         }//fin del while del menu principal
     }//fin del main
