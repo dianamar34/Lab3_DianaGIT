@@ -11,6 +11,7 @@ public class P2_Lab3_DianaSantos {
         ArrayList<Carros> carros = new ArrayList();
         ArrayList<Empleados> empleados = new ArrayList();
         ArrayList<Clientes> clientes = new ArrayList();
+        ArrayList<Ventas> reporte = new ArrayList();
 
         String opcion = "";
         int CantLlantas, VelocidadM, recorridoG, PrecioVenta, veloMax, recorreMo, price, kmh, corre, PrecioF, Peso, transmision, Vmax, corrido, PriceT;
