@@ -347,7 +347,7 @@ public class P2_Lab3_DianaSantos {
                                 for (Object t : carros) {
                                     s += "Posicion: " + carros.indexOf(t) + ": " + ((MorganAero8) (t)).getNSerie() + "\n";
                                 }
-                                
+
                                 JOptionPane.showMessageDialog(null, s);
                                 posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
                                 carros.get(posicion);
@@ -359,7 +359,7 @@ public class P2_Lab3_DianaSantos {
                                 for (Object t : carros) {
                                     s += "Posicion: " + carros.indexOf(t) + ": " + ((FiskerAutomotiv) (t)).getNSerie() + "\n";
                                 }
-                                
+
                                 JOptionPane.showMessageDialog(null, s);
                                 posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
                                 carros.get(posicion);
@@ -371,7 +371,7 @@ public class P2_Lab3_DianaSantos {
                                 for (Object t : carros) {
                                     s += "Posicion: " + carros.indexOf(t) + ": " + ((Tramontana) (t)).getNSerie() + "\n";
                                 }
-                                
+
                                 JOptionPane.showMessageDialog(null, s);
                                 posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
                                 carros.get(posicion);
@@ -403,9 +403,42 @@ public class P2_Lab3_DianaSantos {
                     }
                 }//fin del while de elim
             }//FIN DE LA OPCION C DEL MENU PRINCIPAL
-            if(opcion.equals("d")){
-                //REPORTES
-               
+            if (opcion.equals("d")) {
+                //REPORTE
+                JOptionPane.showInputDialog("REPORTE");
+                for (int i = 0; i < empleados.size(); i++) {
+                    String cont = "";
+                    cont += JOptionPane.showInputDialog(empleados.get(i).getCliente()) + JOptionPane.showInputDialog(carros.get(i));
+
+                }
+
+            }
+            if (opcion.equals("e")) {
+                String s = "";
+                int posicion;
+                for (Object t : empleados) {
+
+                    s += "Posicion: " + empleados.indexOf(t) + ": " + ((Empleados) (t)).getNombre() + "\n";
+                }
+                JOptionPane.showMessageDialog(null, s);
+                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del empleado a eliminar:"));
+                empleados.get(posicion);
+                String p = "";
+                int posicio;
+                for (Object t : clientes) {
+                    s += "Posicion: " + clientes.indexOf(t) + ": " + ((Clientes) (t)).getNombre() + "\n";
+                }
+                JOptionPane.showMessageDialog(null, p);
+                posicio = Integer.parseInt(JOptionPane.showInputDialog("Posición del cliente a eliminar:"));
+                clientes.get(posicio);
+                for (Object t : carros) {
+                    s += "Posicion: " + carros.indexOf(t) + ": " + ((MorganAero8) (t)).getNSerie() + "\n";
+                }
+
+                JOptionPane.showMessageDialog(null, s);
+                posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición del carro a eliminar:"));
+                carros.get(posicion);
+                
             }
         }//fin del while del menu principal
     }//fin del main
